@@ -17,14 +17,12 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.3</string>
+	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.0.3</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2016 Christopher Newton. All rights reserved.</string>
+	<string>1.0.0</string>
 	<key>NSPrincipalClass</key>
-	<string>EpochFlipClock</string>
+	<string>TimeScreenSaver</string>
 </dict>
 </plist>

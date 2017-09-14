@@ -1,16 +1,16 @@
-#import "EpochFlipClock.h"
+#import "TimeScreenSaver.h"
 #import <WebKit/WebKit.h>
 
-@implementation EpochFlipClock
+@implementation TimeScreenSaver
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     if (!(self = [super initWithFrame:frame isPreview:isPreview])) return nil;
 
-    NSURL* indexHTMLDocumentURL = [NSURL URLWithString:[[[NSURL fileURLWithPath:[[NSBundle bundleForClass:self.class].resourcePath stringByAppendingString:@"/index.html"] isDirectory:NO] description] stringByAppendingFormat:@"?screensaver=1%@", self.isPreview ? @"&is_preview=1" : @""]];
+    NSURL* timeHTMLDocumentURL = [NSURL URLWithString:[[[NSURL fileURLWithPath:[[NSBundle bundleForClass:self.class].resourcePath stringByAppendingString:@"/time.html"] isDirectory:NO] description] stringByAppendingFormat:@"?screensaver=1%@", self.isPreview ? @"&is_preview=1" : @""]];
 
     WebView* webView = [[WebView alloc] initWithFrame:NSMakeRect(0, 0, frame.size.width, frame.size.height)];
-    webView.drawsBackground = NO; // Avoids a "white flash" just before the index.html file has loaded
-    [webView.mainFrame loadRequest:[NSURLRequest requestWithURL:indexHTMLDocumentURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0]];
+    webView.drawsBackground = NO; // Avoids a "white flash" just before the time..html file has loaded
+    [webView.mainFrame loadRequest:[NSURLRequest requestWithURL:timeHTMLDocumentURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0]];
     [self addSubview:webView];
 
     return self;
